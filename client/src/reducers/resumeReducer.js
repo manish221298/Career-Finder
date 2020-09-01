@@ -11,7 +11,7 @@ const resumeReducer = (state = [], action) => {
             return [].concat(state = resumeInitialState, action.payload)
         }
         default: {
-            return {...state}
+            return [...state]
         }
     }
 }

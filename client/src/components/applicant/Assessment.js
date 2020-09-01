@@ -2,40 +2,55 @@ import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 import {Container, Form, Col, Row, Button} from 'react-bootstrap'
+import { startAddAssessment } from '../../actions/assessmentAction'
 
 function Assessment(props){
 
     const initialInputState = {
         assessment1: '',
         assessment2: '', 
-        status: true
+        //status: true
     }
 
     const [eachState, setState] = useState(initialInputState)
 
     const {assessment1, assessment2 } = eachState
 
+    const handleChange = (e) => {
+        setState({...eachState, [e.target.name]: e.target.value})
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const formData = {
+            assessment1: assessment1,
+            assessment2: assessment2
+        }
+        console.log('formData', formData)
+        props.dispatch(startAddAssessment(formData))
+    }
+
     const data = "Mention in detail what relevent skill or past experience you hava for this job. What excites you about this job? Why would you be a good fit?"
 
     return (
         <div>
-            <Container>
-               <h2 className="text-left mt-5 ml-5"><b>Assessment questions</b></h2>
-               <Form.Label className="mt-4 ml-5">Why should you be hired for this role?</Form.Label>
+             <Container>
+                <h2 className="text-left mt-5 ml-5"><b>Assessment questions</b></h2>
+              <Form.Label className="mt-4 ml-5">Why should you be hired for this role?</Form.Label>
                {
                    <p className="ml-5 text-secondary">{props.user.username}, please answer this question carefully. It will increase your chances of getting hired.</p>
                }
 
-               <Form>
+               <Form onSubmit={handleSubmit}>
                    <Row>
                        <Col md={10}>
                             <Form.Control className="ml-5" as="textarea" rows="8"
                                 placeholder={data}
-                                type="textfield"
-                                id="position"
-                                name="position"
-                                //value={position}
-                                //onChange={handleChange}
+                                type="text"
+                                id="assessment1"
+                                name="assessment1"
+                                value={assessment1}
+                                onChange={handleChange}
                                 required
                             />
                        </Col>
@@ -46,11 +61,11 @@ function Assessment(props){
                        <Col md={10}>
                             <Form.Control className="ml-5" as="textarea" rows="8"
                                 placeholder="Enter text..."
-                                type="textfield"
-                                id="position"
-                                name="position"
-                                //value={position}
-                                //onChange={handleChange}
+                                type="text"
+                                id="assessment2"
+                                name="assessment2"
+                                value={assessment2}
+                                onChange={handleChange}
                                 required
                             />
                        </Col>
@@ -66,6 +81,7 @@ function Assessment(props){
             </Container>
         </div>
     )
+    
 }
 
 const mapStateToProps = (state) => {

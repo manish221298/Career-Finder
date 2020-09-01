@@ -69,7 +69,15 @@ const resumeSchema = new Schema ({
             performance: {
                 type: String,
                 required: true
-            }
+            },
+	    degree: {
+		type: String,
+		required: true
+	    },
+	   stream: {
+		type: String,
+		required: true
+	    },
         },
 
     skills: [String],

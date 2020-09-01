@@ -7,7 +7,7 @@ function CreateResume(props) {
 
     const initialInputState = {name: '', email: '', mobileNumber: '', currentCity: '',
                                 seniorSecondary: {college: '', board: '', passingYear: '', grade: ''},
-                                graduation: {institution: '', university: '', yearOfCompletion: '', performance: ''},
+                                graduation: {institution: '', university: '', yearOfCompletion: '', performance: '', degree: '', stream: ''},
                                 skills: '', experience: '',
                                 projects: {title: '', startDate: '', endDate: '', link: ''}
                             };
@@ -19,7 +19,7 @@ function CreateResume(props) {
 
     const {name, email, mobileNumber, currentCity, skills, experience} = eachValue;
     const {college, board, passingYear, grade} = eachValues;
-    const {institution, university, yearOfCompletion, performance} = graduationValues;
+    const {institution, university, yearOfCompletion, performance, degree, stream} = graduationValues;
     const {title, startDate, endDate, link} = projectsValues;
 
     const handleChange = (e) => {
@@ -51,13 +51,16 @@ function CreateResume(props) {
             college: college,
             board: board,
             passingYear: passingYear,
-            grade: grade},
+            grade: grade
+            },
 
             graduation: {
             institution: institution,
             university: university,
             yearOfCompletion: yearOfCompletion,
-            performance: performance
+            performance: performance,
+            degree: degree,
+            stream: stream
             },
             skills: skills,
             experience: experience,
@@ -237,8 +240,34 @@ function CreateResume(props) {
                         </Col>
                     </Row>
 
+                    {/* // 7th  Row */}
+                    <Row className="pt-3">
+                        <Col md={6}>
+                            <Form.Label htmlFor="degree">Degree:-</Form.Label>
+                            <Form.Control 
+                                type="text"
+                                id="degree"
+                                name="degree"
+                                value={degree}
+                                onChange={handleGraduation}
+                                //required
+                            />
+                        </Col>
+                        <Col md={6}>
+                        <Form.Label htmlFor="stream">Stream:-</Form.Label>
+                        <Form.Control 
+                            type="text"
+                            id="stream"
+                            name="stream"
+                            value={stream}
+                            onChange={handleGraduation}
+                            //required
+                        />
+                        </Col>
+                    </Row>
+
                     <h3 className="mt-3 text-secondary">Technicak Skills</h3>
-                        {/* 7th Row */}
+                        {/* 8th Row */}
                     <Row className="pt-3">
                         <Col md={6}>
                             <Form.Label htmlFor="skills">Skills:-</Form.Label>
@@ -264,7 +293,7 @@ function CreateResume(props) {
                         </Col>
                     </Row>
                     <h3 className="mt-3 text-secondary">Projects</h3>
-                     {/* 8th Row */}
+                     {/* 9th Row */}
                      <Row className="pt-3">
                         <Col md={6}>
                             <Form.Label htmlFor="title">Title:-</Form.Label>
@@ -289,7 +318,7 @@ function CreateResume(props) {
                             />
                         </Col>
                     </Row>
-                    {/* // 9th row */}
+                    {/* // 10th row */}
                     <Row className="pt-3">
                         <Col md={6}>
                             <Form.Label htmlFor="endDate">EndDate:-</Form.Label>
