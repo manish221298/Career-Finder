@@ -11,7 +11,7 @@ function EditProfile(props){
     const handleEditSubmit = (company) => {
         props.dispatch(startEditCompany(company))
     }
-    console.log("show", props.company)
+    console.log("show", props)
     return (
         <div>
             {//console.log(props.company),

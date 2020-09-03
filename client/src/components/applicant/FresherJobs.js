@@ -25,7 +25,7 @@ function FresherJob(props){
                                         props.user.role === 'admin' ? 
                                         <Nav.Link href={`/company/editprofile/${cmp._id}`}>Edit</Nav.Link>
                                         : 
-                                        <Nav.Link href={'/assessment'}><Button style={{fontSize: "20px", float: "right"}}>Apply Now</Button></Nav.Link>
+                                        <Nav.Link href={`/assessment/${cmp._id}`}><Button style={{fontSize: "20px", float: "right"}}>Apply Now</Button></Nav.Link>
                                     }
                                 </Card.Body>
                             )

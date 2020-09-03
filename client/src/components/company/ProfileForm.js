@@ -8,7 +8,7 @@ function ProfileForm(props){
     const initialInputState = {position: props.company ? props.company.position : '',
                                name: props.company ? props.company.name : '',
                                location: props.company ? props.company.location : '',
-                               requiredSkills: props.company ? props.company.requiredSkills : '', 
+                               requiredSkills: props.company ? props.company.requiredSkills : '',
                                salary: props.company ? props.company.salary : '',
                                fresher: props.company ? props.company.fresher : '', 
                                appliedBy: props.company ? props.company.appliedBy : '', 

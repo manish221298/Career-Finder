@@ -6,7 +6,8 @@ assessmentController.create = (req, res) => {
     const body = req.body
     const assessment = new Assessment(body)
 
-    assessment.user = req.user._id
+    //assessment.user = req.user._id
+    assessment.user = req.company.id
     assessment.save()
     .then((assessment) => {
         res.json(assessment)
@@ -18,7 +19,7 @@ assessmentController.create = (req, res) => {
 
 // Show Assessment
 assessmentController.list = (req, res) => {
-    Assessment.find({user: req.user._id})
+    Assessment.find({user: req.user._id}).populate('company')
     .then((assessment) => {
         res.json(assessment)
     })

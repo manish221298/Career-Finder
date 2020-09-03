@@ -33,7 +33,7 @@ function App() {
 
               <Route path="/createresume" component={CreateResume} exact={true}/>
               <Route path="/showresume" component={ShowResume} exact={true}/>
-              <Route path="/assessment" component={Assessment} exact={true}/>
+              <Route path="/assessment/:id" component={Assessment} exact={true}/>
 
               <Route path="/createprofile" component={CreateProfile} exact={true}/>
               <Route path="/company/editprofile/:id" component={EditProfile} exact={true}/>

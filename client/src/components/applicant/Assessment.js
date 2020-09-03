@@ -3,18 +3,20 @@ import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 import {Container, Form, Col, Row, Button} from 'react-bootstrap'
 import { startAddAssessment } from '../../actions/assessmentAction'
+import { findCompany } from '../../selectors/companySelector'
 
 function Assessment(props){
-
+    console.log("message", (props.company)?.name)
     const initialInputState = {
         assessment1: '',
         assessment2: '', 
+        companyName: (props.company)?.name
         //status: true
     }
 
     const [eachState, setState] = useState(initialInputState)
 
-    const {assessment1, assessment2 } = eachState
+    const {assessment1, assessment2, companyName } = eachState
 
     const handleChange = (e) => {
         setState({...eachState, [e.target.name]: e.target.value})
@@ -24,7 +26,8 @@ function Assessment(props){
         e.preventDefault()
         const formData = {
             assessment1: assessment1,
-            assessment2: assessment2
+            assessment2: assessment2,
+            companyName: companyName
         }
         console.log('formData', formData)
         props.dispatch(startAddAssessment(formData))
@@ -34,6 +37,9 @@ function Assessment(props){
 
     return (
         <div>
+            {
+                //console.log("company", props.company.map(cmp => cmp.position))
+            }
              <Container>
                 <h2 className="text-left mt-5 ml-5"><b>Assessment questions</b></h2>
               <Form.Label className="mt-4 ml-5">Why should you be hired for this role?</Form.Label>
@@ -42,6 +48,7 @@ function Assessment(props){
                }
 
                <Form onSubmit={handleSubmit}>
+                   <input type="text" name="companyName" value={companyName} onChange={handleChange} />
                    <Row>
                        <Col md={10}>
                             <Form.Control className="ml-5" as="textarea" rows="8"
@@ -84,9 +91,13 @@ function Assessment(props){
     
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
+    const id = props.match.params.id
     return {
-        user: state.user
+        user: state.user,
+        company: findCompany(state.company, id),
+        //company: state.company,
+        resume: state.resume
     }
 }
 

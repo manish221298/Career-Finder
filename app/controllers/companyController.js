@@ -42,9 +42,10 @@ companyController.show = (req, res) => {
 //Update company profile
 companyController.update = (req, res) => {
     const id = req.params.id
+    console.log("ids", id)
     const body = req.body
 
-    Company.findByIdAndUpdate({_id: id}, body, {new: true, runValidators: true})
+    Company.findByIdAndUpdate(id, body, {new: true, runValidators: true})
     .then((company) => {
         res.json(company)
     })

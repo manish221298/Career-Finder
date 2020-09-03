@@ -30,12 +30,12 @@ const companySchema = new Schema ({
     salary: {
         type: String,
         required: [true, 'salary is required']
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        //required: true
     }
-    // user: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'User',
-    //     //required: true
-    // }
 })
 
 const Company = mongoose.model('Company', companySchema)
