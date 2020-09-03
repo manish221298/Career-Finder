@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 import {Container, Form, Col, Row, Button} from 'react-bootstrap'
@@ -6,17 +6,25 @@ import { startAddAssessment } from '../../actions/assessmentAction'
 import { findCompany } from '../../selectors/companySelector'
 
 function Assessment(props){
-    console.log("message", (props.company)?.name)
+    const name = (props.company)?.name
+    //console.log(name)
     const initialInputState = {
         assessment1: '',
         assessment2: '', 
-        companyName: (props.company)?.name
+        companyName: name
         //status: true
     }
-
+    
     const [eachState, setState] = useState(initialInputState)
 
+    //componentWillReceiveProps
+    // useEffect(() => {
+    //     setState((props.company?.name));
+    //   }, [eachState]);
+
     const {assessment1, assessment2, companyName } = eachState
+
+    console.log("message", companyName)
 
     const handleChange = (e) => {
         setState({...eachState, [e.target.name]: e.target.value})
@@ -102,4 +110,3 @@ const mapStateToProps = (state, props) => {
 }
 
 export default connect(mapStateToProps)(Assessment)
-

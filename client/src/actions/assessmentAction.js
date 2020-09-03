@@ -14,6 +14,7 @@ export const startAddAssessment = (formData) => {
         .then((response) => {
             alert('successfully added')
             const assessment = response.data
+            console.log("assessment", assessment)
             dispatch(addAssessment(assessment))
         })
         .catch((err) => {

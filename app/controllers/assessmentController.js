@@ -6,8 +6,8 @@ assessmentController.create = (req, res) => {
     const body = req.body
     const assessment = new Assessment(body)
 
-    //assessment.user = req.user._id
-    assessment.user = req.company.id
+    assessment.user = req.user._id
+    //assessment.user = req.company.id
     assessment.save()
     .then((assessment) => {
         res.json(assessment)
