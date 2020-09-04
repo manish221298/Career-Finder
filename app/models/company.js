@@ -25,7 +25,7 @@ const companySchema = new Schema ({
     },
     numberOfOpening: {
         type: Number,
-        required: true
+        required: true  
     },
     salary: {
         type: String,

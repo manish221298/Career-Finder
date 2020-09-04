@@ -1,30 +1,33 @@
 import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
-import {Container, Form, Col, Row, Button} from 'react-bootstrap'
+import {Container, Form, Col, Row, Button, Card} from 'react-bootstrap'
 import { startAddAssessment } from '../../actions/assessmentAction'
 import { findCompany } from '../../selectors/companySelector'
 
 function Assessment(props){
-    const name = (props.company)?.name
-    //console.log(name)
+    const companyName = (props.company)?.name
+    //console.log(companyName)
+    const name = props.resume.map(cv => (cv.name)).toString()
+    const email = props.resume.map(cv => cv.email).toString()
+    const mobileNumber = props.resume.map(cv => cv.mobileNumber).toString()
+    //console.log(mobileNumber)
+
     const initialInputState = {
         assessment1: '',
         assessment2: '', 
-        companyName: name
+        companyName: '',
+        name: '',
+        email: '',
+        mobileNumber: ''
         //status: true
     }
     
     const [eachState, setState] = useState(initialInputState)
 
-    //componentWillReceiveProps
-    // useEffect(() => {
-    //     setState((props.company?.name));
-    //   }, [eachState]);
+    const {assessment1, assessment2 } = eachState
 
-    const {assessment1, assessment2, companyName } = eachState
-
-    console.log("message", companyName)
+    //console.log("message", companyName)
 
     const handleChange = (e) => {
         setState({...eachState, [e.target.name]: e.target.value})
@@ -35,7 +38,10 @@ function Assessment(props){
         const formData = {
             assessment1: assessment1,
             assessment2: assessment2,
-            companyName: companyName
+            companyName: companyName,
+            name: name,
+            email: email,
+            mobileNumber: mobileNumber //(props.company)?.name
         }
         console.log('formData', formData)
         props.dispatch(startAddAssessment(formData))
@@ -48,17 +54,41 @@ function Assessment(props){
             {
                 //console.log("company", props.company.map(cmp => cmp.position))
             }
-             <Container>
-                <h2 className="text-left mt-5 ml-5"><b>Assessment questions</b></h2>
-              <Form.Label className="mt-4 ml-5">Why should you be hired for this role?</Form.Label>
+             <Container onSubmit={handleSubmit}>
+                <h2 className="text-center bg-light mt-5 ml-5 mr-5"><b>Assessment questions</b></h2>
+              
+
+               <Form >
+                   <Row>
+                       <Col md={6}>
+                       <Form.Control className="ml-5 border-0 text-left" style={{fontSize: "35px"}}
+                                value={name}
+                            />
+                        <Form.Control className="ml-5 border-0 text-left"
+                                value={email}
+                            />
+                        <Form.Control className="ml-5 border-0 text-left"
+                                value={mobileNumber}
+                            />
+                       </Col>
+                       <Col md={6}>
+                            <Form.Control className="ml-5 border-0 text-center" style={{fontSize: "35px"}}
+                                type="text"
+                                id="assessment1"
+                                name="companyName"
+                                value={companyName}
+                                onChange={handleChange}
+                                required
+                            />
+                       </Col>
+                   </Row>
+                   <hr/>
+                   <Form.Label className="mt-4 ml-5">Why should you be hired for this role?</Form.Label>
                {
                    <p className="ml-5 text-secondary">{props.user.username}, please answer this question carefully. It will increase your chances of getting hired.</p>
                }
-
-               <Form onSubmit={handleSubmit}>
-                   <input type="text" name="companyName" value={companyName} onChange={handleChange} />
                    <Row>
-                       <Col md={10}>
+                       <Col md={11}>
                             <Form.Control className="ml-5" as="textarea" rows="8"
                                 placeholder={data}
                                 type="text"
@@ -73,7 +103,7 @@ function Assessment(props){
                    <Form.Label className="mt-4 ml-5">Please share links to your latest web development projects.</Form.Label>
                    <p className="ml-5 text-secondary">If you want to share any documents or files, please share it on <Link to="mail.google.com">iammnsh01@gmail.com</Link> and paste the public link in the answer.</p>
                    <Row>
-                       <Col md={10}>
+                       <Col md={11}>
                             <Form.Control className="ml-5" as="textarea" rows="8"
                                 placeholder="Enter text..."
                                 type="text"

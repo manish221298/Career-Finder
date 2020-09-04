@@ -45,7 +45,7 @@ companyController.update = (req, res) => {
     console.log("ids", id)
     const body = req.body
 
-    Company.findOneAndUpdate({ user: req.user._id, _id: id }, body , {new: true, runValidators: true})
+    Company.findByIdAndUpdate({ user: req.user._id, _id: id }, body , {new: true, runValidators: true})
     .then((company) => {
         res.json(company)
     })

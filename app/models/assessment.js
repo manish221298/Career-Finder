@@ -14,7 +14,19 @@ const assessmentSchema = new Schema({
     companyName: {
 	type: String,
 	required: true
-	},
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    mobileNumber: {
+        type: Number,
+        required: true
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
