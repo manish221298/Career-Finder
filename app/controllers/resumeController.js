@@ -51,7 +51,7 @@ resumeController.show = (req, res) => {
 resumeController.update = (req, res) => {
     const id = req.params.id
     const body = req.body
-    Resume.findByIdAndUpdate({_id: id, user: req.user._id}, body, {new: true, runValidators: true})
+    Resume.findByIdAndUpdate({_id: id, user: req.user._id}, { $set: body }, {new: true, runValidators: true})
     .then((resume) => {
         res.json(resume)
     })

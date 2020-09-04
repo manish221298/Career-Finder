@@ -40,3 +40,26 @@ export const startSetResume = () => {
         })
     }
 }
+
+export const editResume = (resume) => {
+    return {type: "EDIT_RESUME", payload: resume}
+}
+
+export const startEditResume = (resume) => {
+    return (dispatch) => {
+        axios.put('/resume/create/:id', resume, {
+            headers: {
+                'Authorization': localStorage.getItem('authToken')
+            }
+        })
+        .then((response) => {
+            alert('updated successfully')
+            console.log(response.data)
+            const resume = response.data
+            dispatch(editResume(resume))
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }
+}

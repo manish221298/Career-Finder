@@ -4,7 +4,9 @@ const configureDB = () => {
     mongoose.connect('mongodb://localhost:27017/career-finder', {       
             useNewUrlParser: true, 
             useUnifiedTopology: true, 
-            useCreateIndex: true
+            useCreateIndex: true,
+            useFindAndModify: false,
+
     })
     .then(() => {
         console.log('connected to db')

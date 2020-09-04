@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Container, Card, Row, Col} from 'react-bootstrap'
+import { Container, Card, Row, Col, Nav} from 'react-bootstrap'
 
 function ShowResume(props) {
     return (
@@ -46,6 +46,11 @@ function ShowResume(props) {
                                         </Col>
                                     </Row>
                                     <hr/>
+                                    <Row>
+                                        <Col>
+                                            <Nav.Link href={`/applicant/editresume/${resume._id}`}>Edit</Nav.Link>
+                                        </Col>
+                                    </Row>
 
                                 </Card.Body>
                             )
