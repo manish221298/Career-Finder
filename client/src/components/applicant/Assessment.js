@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
-import {Container, Form, Col, Row, Button, Card} from 'react-bootstrap'
+import {Container, Form, Col, Row, Button} from 'react-bootstrap'
 import { startAddAssessment } from '../../actions/assessmentAction'
 import { findCompany } from '../../selectors/companySelector'
 
@@ -43,7 +43,7 @@ function Assessment(props){
             email: email,
             mobileNumber: mobileNumber //(props.company)?.name
         }
-        console.log('formData', formData)
+        //console.log('formData', formData)
         props.dispatch(startAddAssessment(formData))
     }
 
@@ -55,7 +55,7 @@ function Assessment(props){
                 //console.log("company", props.company.map(cmp => cmp.position))
             }
              <Container onSubmit={handleSubmit}>
-                <h2 className="text-center bg-light mt-5 ml-5 mr-5"><b>Assessment questions</b></h2>
+                <h2 className="text-center mt-5 ml-5 mr-5" style={{backgroundColor: "#f2f2f2"}}><b>Assessment questions</b></h2>
               
 
                <Form >
@@ -117,10 +117,11 @@ function Assessment(props){
                    </Row>
                    <Row>
                         <Col md={6} style={{marginLeft: "290px"}}>
-                        <Button   className="mt-3 pl-5 pr-5">
+                        <Button   className="mt-3 mb-3 pl-5 pr-5">
                         <input type="submit" className="btn" value="SUBMIT"/></Button>
                         </Col>
                     </Row>
+                    <hr/>
                </Form>
                
             </Container>

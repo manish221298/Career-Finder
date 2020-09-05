@@ -4,6 +4,7 @@ import {Container, Form, Col, Row, Button} from 'react-bootstrap'
 //import { startAddCompany } from "../../actions/companyAction";
 
 function ProfileForm(props){
+    console.log("props", props)
 
     const initialInputState = {position: props.company ? props.company.position : '',
                                name: props.company ? props.company.name : '',

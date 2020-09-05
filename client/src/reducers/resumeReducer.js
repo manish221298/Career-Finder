@@ -1,14 +1,15 @@
 // const resumeInitialState = []
 
 const resumeReducer = (state = [], action) => {
-    const resumeInitialState = []
+    //const resumeInitialState = []
 
     switch(action.type){
         case "ADD_RESUME": {
             return [...state, action.payload]
         }
         case "SET_RESUME": {
-            return [].concat(state = resumeInitialState, action.payload)
+            // return [].concat(state = resumeInitialState, action.payload)
+            return [...action.payload]
         }
         case "EDIT_RESUME": {
             return state.map(cv => {

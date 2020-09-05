@@ -4,7 +4,7 @@ import App from './App';
 import { Provider } from 'react-redux'
 
 import configureStore from './store/configureStore'
-import { startGetUser } from './actions/userAction';
+import { startGetUser } from './actions/userAction'
 import { startSetCompany } from './actions/companyAction'
 import { startSetResume } from './actions/resumeAction'
 import { startSetAssessment } from './actions/assessmentAction'

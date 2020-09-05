@@ -1,8 +1,7 @@
 import React from 'react'
-import ProfileForm from './ProfileForm'
-
 import {connect} from 'react-redux'
-import { startAddCompany } from "../../actions/companyAction";
+import ProfileForm from './ProfileForm'
+import { startAddCompany } from '../../actions/companyAction'
 
 function CreateProfile(props){  
 

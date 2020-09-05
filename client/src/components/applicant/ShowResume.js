@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
+import moment from 'moment'
 import { Container, Card, Row, Col, Nav} from 'react-bootstrap'
 
 function ShowResume(props) {
@@ -41,7 +42,8 @@ function ShowResume(props) {
                                         <Col md={4}>PROJECT</Col>
                                         <Col md={8}>
                                             <p><b>{resume.projects.title}</b></p>
-                                            <p className="text-secondary">{resume.projects.startDate}-&nbsp;{resume.projects.endDate}</p>
+                                            <p className="text-secondary">{moment(resume.projects.startDate).format('L')}&nbsp;--&nbsp;
+                                                {moment(resume.projects.endDate).format('L')}</p>
                                             <p>Projects Link:-<Link className="text-info">{resume.projects.link}</Link></p>
                                         </Col>
                                     </Row>

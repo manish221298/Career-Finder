@@ -1,35 +1,36 @@
 import React, {useState}  from 'react'
 import { connect } from 'react-redux'
 import {Container, Form, Col, Row, Button} from 'react-bootstrap'
-// import { startAddResume } from '../../actions/resumeAction'
+import { startAddResume } from '../../actions/resumeAction'
 
 function ResumeForm(props) {
+    //console.log(props)
 
     const initialInputState = {name: props.resume ? props.resume.name : '',
                                email: props.resume ? props.resume.email : '', 
                                mobileNumber: props.resume ? props.resume.mobileNumber : '', 
                                currentCity: props.resume ? props.resume.currentCity : '',
                                seniorSecondary: {
-                                    college: props.resume.seniorSecondary ? props.resume.seniorSecondary.college : '', 
-                                    board: props.resume.seniorSecondary ? props.resume.seniorSecondary.board : '', 
-                                    passingYear: props.resume.seniorSecondary ? props.resume.seniorSecondary.passingYear : '', 
-                                    grade: props.resume.seniorSecondary ? props.resume.seniorSecondary.grade : ''
+                                    college: props.resume ? props.resume.seniorSecondary.college : '', 
+                                    board: props.resume ? props.resume.seniorSecondary.board : '', 
+                                    passingYear: props.resume ? props.resume.seniorSecondary.passingYear : '', 
+                                    grade: props.resume ? props.resume.seniorSecondary.grade : ''
                                 },
                                graduation: {
-                                   institution: props.resume.graduation ? props.resume.graduation.institution : '', 
-                                   university: props.resume.graduation ? props.resume.graduation.university : '', 
-                                   yearOfCompletion: props.resume.graduation ? props.resume.graduation.yearOfCompletion : '', 
-                                   performance: props.resume.graduation ? props.resume.graduation.institution : '', 
-                                   degree: props.resume.graduation ? props.resume.graduation.degree : '', 
-                                   stream: props.resume.graduation ? props.resume.graduation.stream : ''
+                                   institution: props.resume ? props.resume.graduation.institution : '', 
+                                   university: props.resume ? props.resume.graduation.university : '', 
+                                   yearOfCompletion: props.resume ? props.resume.graduation.yearOfCompletion : '', 
+                                   performance: props.resume ? props.resume.graduation.institution : '', 
+                                   degree: props.resume ? props.resume.graduation.degree : '', 
+                                   stream: props.resume ? props.resume.graduation.stream : ''
                                 },
                                 skills: props.resume ? props.resume.skills : '',
                                 experience: props.resume ? props.resume.experience : '',
                                 projects: {
-                                    title: props.resume.projects ? props.resume.projects.title : '', 
-                                    startDate: props.resume.projects ? props.resume.projects.startDate : '', 
-                                    endDate: props.resume.projects ? props.resume.projects.endDate : '', 
-                                    link: props.resume.projects ? props.resume.projects.link : ''}
+                                    title: props.resume ? props.resume.projects.title : '', 
+                                    startDate: props.resume ? props.resume.projects.startDate : '', 
+                                    endDate: props.resume ? props.resume.projects.endDate : '', 
+                                    link: props.resume ? props.resume.projects.link : ''}
                             };
 
     const [eachValue, setValue] = useState(initialInputState);
@@ -92,11 +93,12 @@ function ResumeForm(props) {
             link: link
             }
         }
-        console.log(formData)
-        //props.dispatch(startAddResume(formData))
+        //console.log(formData)
+        props.dispatch(startAddResume(formData))
         props.resume && (formData.id = props.resume._id)
 
         props.handleEditSubmit(formData)
+        //console.log("check here",props)
     }
    
     return (

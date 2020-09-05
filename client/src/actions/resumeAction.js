@@ -36,7 +36,7 @@ export const startSetResume = () => {
         .then((response) => {
             const resume = response.data
             console.log(resume)
-            dispatch(SetResume(resume))
+           dispatch(SetResume(resume))
         })
     }
 }
