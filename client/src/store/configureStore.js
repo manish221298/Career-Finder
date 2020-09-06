@@ -4,13 +4,15 @@ import userReducer from '../reducers/userReducer'
 import resumeReducer from '../reducers/resumeReducer'
 import companyReducer from '../reducers/companyReducer'
 import assessmentReducer from '../reducers/assessmentReducer'
+import adminReducer from '../reducers/adminReducer'
 
 const configureStore = () => {
     const store = createStore(combineReducers({
        user: userReducer,
        resume: resumeReducer,
        company: companyReducer,
-       assessment: assessmentReducer
+       assessment: assessmentReducer,
+       admins: adminReducer,
     }), applyMiddleware(thunk))
     return store
 }

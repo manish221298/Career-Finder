@@ -19,7 +19,7 @@ assessmentController.create = (req, res) => {
 
 // Show Assessment
 assessmentController.list = (req, res) => {
-    Assessment.find({user: req.user._id}).populate('company')
+    Assessment.find()
     .then((assessment) => {
         res.json(assessment)
     })

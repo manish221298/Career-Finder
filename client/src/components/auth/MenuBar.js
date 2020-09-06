@@ -35,12 +35,11 @@ class MenuBar extends React.Component{
                                                 <Dropdown.Item href="/createprofile">Create-Profile</Dropdown.Item>
                                                 <Dropdown.Item href="/fresherjob">FresherJob</Dropdown.Item>
                                                 <Dropdown.Item href="/showapplicant">Applicant</Dropdown.Item>
-                                                <Dropdown.Item href="/showresume">Show Resume</Dropdown.Item>
                                                 <Dropdown.Item href="#" onClick={this.handleLogout}>Logout</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                         <Nav.Item>
-                                            <Nav.Link href={"/showresume"}>resume</Nav.Link>
+                                            <Nav.Link href={"/resume"}>Resume</Nav.Link>
                                         </Nav.Item>
                                         <Nav.Item>
                                         <Nav.Link to="#" onClick={this.handleLogout} >Logout</Nav.Link>

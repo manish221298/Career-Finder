@@ -67,7 +67,7 @@ function ShowResume(props) {
 const mapStateToProps = (state) => {
     return {
         resume: state.resume,
-        user: state.user
+        user: state.user,
     }
 }
 

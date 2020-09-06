@@ -20,6 +20,7 @@ import Assessment from './components/applicant/Assessment'
 import CreateProfile from './components/company/CreateProfile';
 import EditProfile from './components/company/EditProfile';
 import ShowApplicant from './components/company/ShowApplicant';
+import Resume from './components/company/Resume'
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
               <Route path="/createprofile" component={CreateProfile} exact={true}/>
               <Route path="/company/editprofile/:id" component={EditProfile} exact={true}/>
               <Route path="/fresherjob" component={FresherJob} exact={true}/>
+              <Route path="/resume" component={Resume} exact={true}/>
               <Route path="/showapplicant" component={ShowApplicant} exact={true}/>
             </Switch>
       </div>

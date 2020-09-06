@@ -35,10 +35,9 @@ resumeController.list = (req, res) => {
     })
 }
 
-// Show Resume by id
+// Show Resume for Admin side
 resumeController.show = (req, res) => {
-    const id = req.params.id
-    Resume.findOne({_id: id, user: req.user._id})
+    Resume.find()
     .then((resume) => {
         res.json(resume)
     })
@@ -46,6 +45,18 @@ resumeController.show = (req, res) => {
         res.json(err)
     })
 }
+
+// Show Resume by id
+// resumeController.show = (req, res) => {
+//     const id = req.params.id
+//     Resume.findOne({_id: id, user: req.user._id})
+//     .then((resume) => {
+//         res.json(resume)
+//     })
+//     .catch((err) => {
+//         res.json(err)
+//     })
+// }
 
 // Update Resume by id
 resumeController.update = (req, res) => {

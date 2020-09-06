@@ -95,9 +95,9 @@ function ResumeForm(props) {
         }
         //console.log(formData)
         props.dispatch(startAddResume(formData))
-        props.resume && (formData.id = props.resume._id)
+        //props.resume && (formData.id = props.resume._id)
 
-        props.handleEditSubmit(formData)
+        //props.handleEditSubmit(formData)
         //console.log("check here",props)
     }
    
