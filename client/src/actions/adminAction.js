@@ -15,7 +15,7 @@ export const startSetResumeForAdmin = () => {
         })
         .then((response) => {
             const resume = response.data
-            console.log(resume)
+            //console.log(resume)
            dispatch(SetResumeForAdmin(resume))
         })
     }

@@ -1,8 +1,18 @@
 import React from 'react'
-import {Carousel} from 'react-bootstrap'
-import intern from './intern.png'
+import {Carousel, Row, Col, Image, Container} from 'react-bootstrap'
 import fresher from './fresher.webp'
-import job from './job.jpg'
+import bangalore from './bangalore.svg'
+import delhi_ncr from './delhi_ncr.svg'
+import international from './international.svg'
+import mumbai from './mumbai.svg'
+import patna from './patna.svg'
+import work_from_home from './work_from_home.svg'
+
+
+
+
+
+
 
 
 function Home(){
@@ -10,21 +20,8 @@ function Home(){
         <div>
              <h1 className="pt-2 text-center text-secondary" >Welcome to the Career Finder app</h1>
              <div className='carousel'>
-                <Carousel className="ml-4 mr-4">
-                    {/* <Carousel.Item>
-                    <div className="d-block justify-content-center">
-                            <img className="rounded"
-                                src={intern}
-                                alt="first slide"
-                                width='100%'
-                                height='400'
-                            />
-                        </div>
-                        <Carousel.Caption>
-                            
-                        </Carousel.Caption>
-                    </Carousel.Item> */}
-                    <Carousel.Item>
+                <Carousel>
+                    <Carousel.Item className="pl-4 pr-4">
                     <Carousel.Caption className="text-left">
                             <h1 className="text-light text-left mt-0"><b>Career Finder App</b></h1>
                             <h4 className="text-light text-left mt-3"><b>Introducing</b></h4>
@@ -42,27 +39,24 @@ function Home(){
                                 height='400'
                             />
                         </div>
-                        {/* <Carousel.Caption>
-                            <h3 style={{color:'black',fontSize:'24px'}}><b>Kumar</b></h3>
-                            <p style={{color:'black',fontSize:'24px'}}><b>“Trust yourself, you know more than you think you do”</b></p>
-                        </Carousel.Caption> */}
                     </Carousel.Item>
-                    {/* <Carousel.Item>
-                        <div className="d-block justify-content-center">
-                            <img className="rounded"
-                                src={job}
-                                alt="Third slide"
-                                width='100%'
-                                height='400'
-                            />
-                        </div>
-                        <Carousel.Caption>
-                            <h3 style={{color:'black',fontSize:'24px'}}><b>Chaurasia</b></h3>
-                            <p style={{color:'black',fontSize:'24px'}}><b>“Don’t say you don’t have enough time. You have exactly the same amount of hours per day that were given to…</b></p>
-                        </Carousel.Caption>
-                    </Carousel.Item> */}
                 </Carousel>
             </div>
+            <Container className="mt-4 mb-5">
+                <h4><b>Popular cities</b></h4>
+             <Row className>
+                <Col xs={6} md={4} className="d-block justify-content-center">
+                <Image src={work_from_home} width='80%' height='100px' />
+                <p>Work from home</p>
+                </Col>
+                <Col xs={6} md={4}>
+                <Image src={patna} width='75%' height='100px' />
+                </Col>
+                <Col xs={6} md={4}>
+                <Image src={delhi_ncr}  width='60%' height='100px' />
+                </Col>
+            </Row> 
+            </Container>
         </div>
     )
 }
