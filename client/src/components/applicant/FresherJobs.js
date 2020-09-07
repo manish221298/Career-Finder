@@ -48,21 +48,32 @@ function FresherJob(props){
                         props.company.map(cmp => {
                             return (
                                 <Card.Body className="border bg-light rounded-lg pl-5 mt-5">
-                                    <Card.Header className="border-0"><h3>{cmp.position} <span className="text-secondary" style={{fontSize: "20px", float: "right"}}>{cmp.fresher}</span></h3></Card.Header>
+                                    <Card.Header className="border-0">
+                                        <Row>
+                                            <Col md={8}><h3>{cmp.position}</h3></Col>
+                                            <Col md={4}><span className="text-secondary ml-4" style={{fontSize: "20px"}}>{cmp.fresher}</span></Col>
+                                        </Row>
+                                    </Card.Header>
                                 <Row>
-                                    <Col md={6} className="mt-3">
+                                    <Col md={8} className="mt-4">
                                         <h5 className="text-secondary ml-3">SKILLS</h5>
                                         <p className="ml-3">{cmp.requiredSkills}</p>
                                     </Col>
-                                    <Col md={6} className="text-right mt-3">
+                                    <Col md={4} className="text-left mt-4">
                                     <h4 className="text-secondary ml-3 ">{(cmp.name).toUpperCase()}</h4>
                                     <p className="ml-3" style={{fontSize: "20px"}}><FaMapMarkerAlt className="text-danger" />&nbsp;{cmp.location}</p>
                                     </Col>
                                 </Row>
-                                    <p className="ml-3 mt-4" style={{fontSize: "20px"}}>CTC:- <FaRupeeSign style={{fontSize: "18px"}} />&nbsp;
-                                        <b>{cmp.salary}</b> <span className="text-secondary" style={{fontSize: "20px", float: "right"}}>
-                                           ApplyBy:- {moment(cmp.appliedBy).format('MMMM Do YYYY')}</span>
-                                    </p>
+                                <Row>
+                                    <Col md={8}>
+                                         <p className="ml-3 mt-4" style={{fontSize: "20px"}}>CTC:- <FaRupeeSign style={{fontSize: "18px"}} />&nbsp;
+                                         <b>{cmp.salary}</b> </p>
+                                    </Col>
+                                    <Col md={4}>
+                                            <p className="text-secondary mt-4 ml-3" style={{fontSize: "20px", float: "left"}}>
+                                           ApplyBy:- {moment(cmp.appliedBy).format('MMMM Do YYYY')}</p>
+                                    </Col>
+                                </Row>
                                     {
                                         props.user.role === 'admin' ? 
                                         <Nav.Link href={`/company/editprofile/${cmp._id}`}>Edit</Nav.Link>
@@ -77,26 +88,37 @@ function FresherJob(props){
                     </div>) : (
 
                         <div>
-                            <Card className="border-0 ml-5 mr-5">
+                             <Card className="border-0 ml-5 mr-5">
                     {
                         name.map(cmp => {
                             return (
                                 <Card.Body className="border bg-light rounded-lg pl-5 mt-5">
-                                    <Card.Header className="border-0"><h3>{cmp.position} <span className="text-secondary" style={{fontSize: "20px", float: "right"}}>{cmp.fresher}</span></h3></Card.Header>
+                                    <Card.Header className="border-0">
+                                        <Row>
+                                            <Col md={8}><h3>{cmp.position}</h3></Col>
+                                            <Col md={4}><span className="text-secondary ml-4" style={{fontSize: "20px"}}>{cmp.fresher}</span></Col>
+                                        </Row>
+                                    </Card.Header>
                                 <Row>
-                                    <Col md={6} className="mt-3">
+                                    <Col md={8} className="mt-4">
                                         <h5 className="text-secondary ml-3">SKILLS</h5>
                                         <p className="ml-3">{cmp.requiredSkills}</p>
                                     </Col>
-                                    <Col md={6} className="text-right mt-3">
+                                    <Col md={4} className="text-left mt-4">
                                     <h4 className="text-secondary ml-3 ">{(cmp.name).toUpperCase()}</h4>
                                     <p className="ml-3" style={{fontSize: "20px"}}><FaMapMarkerAlt className="text-danger" />&nbsp;{cmp.location}</p>
                                     </Col>
                                 </Row>
-                                    <p className="ml-3 mt-4" style={{fontSize: "20px"}}>CTC:- <FaRupeeSign style={{fontSize: "18px"}} />&nbsp;
-                                        <b>{cmp.salary}</b> <span className="text-secondary" style={{fontSize: "20px", float: "right"}}>
-                                           ApplyBy:- {moment(cmp.appliedBy).format('MMMM Do YYYY')}</span>
-                                    </p>
+                                <Row>
+                                    <Col md={8}>
+                                         <p className="ml-3 mt-4" style={{fontSize: "20px"}}>CTC:- <FaRupeeSign style={{fontSize: "18px"}} />&nbsp;
+                                         <b>{cmp.salary}</b> </p>
+                                    </Col>
+                                    <Col md={4}>
+                                            <p className="text-secondary mt-4 ml-3" style={{fontSize: "20px", float: "left"}}>
+                                           ApplyBy:- {moment(cmp.appliedBy).format('MMMM Do YYYY')}</p>
+                                    </Col>
+                                </Row>
                                     {
                                         props.user.role === 'admin' ? 
                                         <Nav.Link href={`/company/editprofile/${cmp._id}`}>Edit</Nav.Link>
