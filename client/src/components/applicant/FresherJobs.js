@@ -1,11 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment';
-import { Container, Card, Button, Nav} from 'react-bootstrap'
+import { Container, Card, Button, Nav, Row, Col, FormControl, InputGroup} from 'react-bootstrap'
 import { FaRupeeSign, FaMapMarkerAlt } from "react-icons/fa"
 
 function FresherJob(props){
-    //console.log(props.company)
+   
+    // const displayCompany = props.company
+    // console.log("displayCompany", displayCompany)
+
+    // const filter = (e) => {
+    //     const skills = e.target.value
+    //     console.log(skills)
+    // }
+
     return (
         <div>
             <Container>
@@ -13,16 +21,38 @@ function FresherJob(props){
                     console.log("user", props.user)
                 } */}
                 <h1 className="text-center mt-5 text-secondary">Welcome to Freshers Job</h1>
+                {/* <Row>
+                    <Col md={11} className="ml-5 mt-5">
+                    <InputGroup size="lg" className="mb-3">
+                        <FormControl
+                        type="text"
+                        placeholder="Search By Skills"
+                        name= "skills"
+                        value={skills}
+                        onChange= {filter}
+                        />
+                        <InputGroup.Append>
+                        <Button variant="outline-dark">Button</Button>
+                        </InputGroup.Append>
+                    </InputGroup>
+                    </Col>
+                </Row> */}
                 <Card className="border-0 ml-5 mr-5">
                     {
                         props.company.map(cmp => {
                             return (
                                 <Card.Body className="border bg-light rounded-lg pl-5 mt-5">
                                     <Card.Header className="border-0"><h3>{cmp.position} <span className="text-secondary" style={{fontSize: "20px", float: "right"}}>{cmp.fresher}</span></h3></Card.Header>
-                                    <h4 className="text-secondary ml-3">{(cmp.name).toUpperCase()}</h4>
+                                <Row>
+                                    <Col md={6} className="mt-3">
+                                        <h5 className="text-secondary ml-3">SKILLS</h5>
+                                        <p className="ml-3">{cmp.requiredSkills}</p>
+                                    </Col>
+                                    <Col md={6} className="text-right mt-3">
+                                    <h4 className="text-secondary ml-3 ">{(cmp.name).toUpperCase()}</h4>
                                     <p className="ml-3" style={{fontSize: "20px"}}><FaMapMarkerAlt className="text-danger" />&nbsp;{cmp.location}</p>
-                                    <h5 className="text-secondary ml-3 mt-4">SKILLS</h5>
-                                    {cmp.requiredSkills}
+                                    </Col>
+                                </Row>
                                     <p className="ml-3 mt-4" style={{fontSize: "20px"}}>CTC:- <FaRupeeSign style={{fontSize: "18px"}} />&nbsp;
                                         <b>{cmp.salary}</b> <span className="text-secondary" style={{fontSize: "20px", float: "right"}}>
                                            ApplyBy:- {moment(cmp.appliedBy).format('MMMM Do YYYY')}</span>
