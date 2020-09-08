@@ -91,47 +91,48 @@ function Home(){
             </Container>
 
             <Container className="mt-5 mb-5">
-                <h2 className="text-center"><b>Hear from past interns</b></h2>
-                <CardDeck>
-                    <Card className="border">
-                        <Image variant="top" src={manish1} className="mt-4 img-circle" style={{marginLeft: "90px"}} width='50%' height='175px'/>
+                <h2 className="text-center mb-5"><b>Hear from past interns</b></h2>
+                <CardDeck className="text-center">
+                    <Card className="card" >
+                    <Image style={{marginLeft: "125px", borderRadius: "100px"}} className="mt-4 " src={manish1} width='30%' height='105' />
                         <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
+                        <Card.Title>Prience Kumar</Card.Title>
+                        <p>Content Writing intern, Urban Ladder </p>
+                        <Card.Text className="text-justify">
+                        My internship has equipped me with industry-level skills that a college doesn't
+                        really teach you! I met some amazing people and worked on some really cool 
+                        projects. I can't wait to learn more through this internship experience! My 
+                        advice to students would be “be confident and have immense faith in yourself.” 
                         </Card.Text>
                         </Card.Body>
-                        <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
                     </Card>
                     <Card>
-                        <Card.Img variant="top" src="holder.js/100px160" />
+                        <Image style={{marginLeft: "125px", borderRadius: "100px"}} className="mt-4 " src={manish} width='30%' height='105' />
                         <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This card has supporting text below as a natural lead-in to additional
-                            content.{' '}
+                        <Card.Title>Manish Kumar</Card.Title>
+                        <p>Teaching intern, Teach For India </p>
+                        <Card.Text className="text-justify">
+                        My 1st internship has given my knowledge a completely different direction. 
+                        I learn new things daily & widen my horizons to meet my work as well as my 
+                        academic requirements. I want to tell students that keep trying because getting 
+                        selected or not is not in your hands, but trying is. So, just keep trying with 
+                        the best of your abilities! 
                         </Card.Text>
                         </Card.Body>
-                        <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
                     </Card>
                     <Card>
-                        <Card.Img variant="top" src="holder.js/100px160" />
+                    <Image style={{marginLeft: "125px", borderRadius: "100px"}} className="mt-4 " src={girl} width='30%' height='105' />
                         <Card.Body>
-                        <Card.Title>Card title</Card.Title>
+                        <Card.Title>Taaj Uddin</Card.Title>
+                        <p>Intern, E-cell ACET Amritsar </p>
                         <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to
-                            show that equal height action.
+                        My 1st internship experience has been amazing so far and to be honest, 
+                        I am learning so much. I've learned how to work with different people, 
+                        how to pitch something by doing research, and so much more. My advice to 
+                        students would be to never lose hope! Rejections will be there, but believe 
+                        in yourself and do your best in whatever you do! 
                         </Card.Text>
                         </Card.Body>
-                        <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
                     </Card>
                 </CardDeck>
             </Container>
