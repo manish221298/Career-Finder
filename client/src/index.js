@@ -10,6 +10,7 @@ import { startSetCompany } from './actions/companyAction'
 import { startSetResume } from './actions/resumeAction'
 import { startSetResumeForAdmin } from './actions/adminAction'
 import { startSetAssessment } from './actions/assessmentAction'
+import { startSetInternship } from './actions/internshipAction'
 
 const store = configureStore()
 
@@ -24,6 +25,7 @@ if(localStorage.getItem('authToken')){
   store.dispatch(startSetResume())
   store.dispatch(startSetResumeForAdmin())
   store.dispatch(startSetAssessment())
+  store.dispatch(startSetInternship())
 }
 
 const jsx = (

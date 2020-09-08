@@ -33,6 +33,7 @@ class MenuBar extends React.Component{
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu className="mr-5">
                                                 <Dropdown.Item href="/createprofile">Create-Profile</Dropdown.Item>
+                                                <Dropdown.Item href="/createinternship">Create-Internship</Dropdown.Item>
                                                 <Dropdown.Item href="/fresherjob">FresherJob</Dropdown.Item>
                                                 <Dropdown.Item href="/showapplicant">Applicant</Dropdown.Item>
                                                 <Dropdown.Item href="#" onClick={this.handleLogout}>Logout</Dropdown.Item>

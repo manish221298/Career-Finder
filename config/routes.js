@@ -6,6 +6,7 @@ const  authenticateUser  = require('../app/middlewares/authentication')
 const resumeController = require('../app/controllers/resumeController')
 const companyController = require('../app/controllers/companyController')
 const assessmentController = require('../app/controllers/assessmentController')
+const internshipController = require('../app/controllers/internshipController')
 
 // api for user authentication
 router.post('/users/register', usersController.register)
@@ -29,6 +30,10 @@ router.delete('/api/company/:id', authenticateUser, companyController.destroy)
 router.post('/api/assessment', authenticateUser, assessmentController.create)
 router.get('/api/assessment', authenticateUser, assessmentController.list)
 
+//  api for internship profile (create, show, update and delete)
+router.post('/api/internship',  internshipController.create)
+router.get('/api/internship',  internshipController.list)
+router.put('/api/internship/:id',authenticateUser, internshipController.update)
 
 
 module.exports = router

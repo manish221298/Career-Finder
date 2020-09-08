@@ -5,6 +5,7 @@ import resumeReducer from '../reducers/resumeReducer'
 import companyReducer from '../reducers/companyReducer'
 import assessmentReducer from '../reducers/assessmentReducer'
 import adminReducer from '../reducers/adminReducer'
+import internshipReducer from '../reducers/internshipReducer'
 
 const configureStore = () => {
     const store = createStore(combineReducers({
@@ -13,6 +14,7 @@ const configureStore = () => {
        company: companyReducer,
        assessment: assessmentReducer,
        admins: adminReducer,
+       internship: internshipReducer,
     }), applyMiddleware(thunk))
     return store
 }

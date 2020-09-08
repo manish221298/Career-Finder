@@ -5,13 +5,6 @@ const resumeController = {}
 resumeController.create = (req, res) => {
     const body = req.body
     const resume = new Resume(body)
-
-    // resume.findOne ({email:body.email})
-    // .then( resume =>{
-    //     if( resume ) {
-    //         res.json({error:'Email already registered'})
-    //     }
-    // })
     
     resume.user = req.user._id
 

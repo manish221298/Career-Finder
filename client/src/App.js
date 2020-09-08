@@ -19,6 +19,7 @@ import Assessment from './components/applicant/Assessment'
 // Admin menubar
 import CreateProfile from './components/company/CreateProfile';
 import EditProfile from './components/company/EditProfile';
+import CreateInternship from './components/company/CreateInternship';
 import ShowApplicant from './components/company/ShowApplicant';
 import Resume from './components/company/Resume'
 
@@ -43,6 +44,7 @@ function App() {
 
               <Route path="/createprofile" component={CreateProfile} exact={true}/>
               <Route path="/company/editprofile/:id" component={EditProfile} exact={true}/>
+              <Route path="/createinternship" component={CreateInternship} exact={true}/>
               <Route path="/fresherjob" component={FresherJob} exact={true}/>
               <Route path="/resume" component={Resume} exact={true}/>
               <Route path="/showapplicant" component={ShowApplicant} exact={true}/>
