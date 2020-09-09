@@ -35,6 +35,7 @@ class MenuBar extends React.Component{
                                                 <Dropdown.Item href="/createprofile">Create-Profile</Dropdown.Item>
                                                 <Dropdown.Item href="/createinternship">Create-Internship</Dropdown.Item>
                                                 <Dropdown.Item href="/fresherjob">FresherJob</Dropdown.Item>
+                                                <Dropdown.Item href="/internship">Internship</Dropdown.Item>
                                                 <Dropdown.Item href="/showapplicant">Applicant</Dropdown.Item>
                                                 <Dropdown.Item href="#" onClick={this.handleLogout}>Logout</Dropdown.Item>
                                             </Dropdown.Menu>
@@ -55,7 +56,7 @@ class MenuBar extends React.Component{
                                         <Nav className="ml-auto">
                                         <Nav.Link href={"/"}>Home</Nav.Link>
                                         <Nav.Item>
-                                            <Nav.Link href={"/users/register"}>Internships</Nav.Link>
+                                            <Nav.Link href={"/internship"}>Internships</Nav.Link>
                                         </Nav.Item>
                                         <Nav.Item>
                                             <Nav.Link href={"/fresherjob"}>Fresher Jobs</Nav.Link>
