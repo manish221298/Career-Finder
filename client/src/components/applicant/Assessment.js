@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import {Container, Form, Col, Row, Button} from 'react-bootstrap'
 import { startAddAssessment } from '../../actions/assessmentAction'
 import { findCompany } from '../../selectors/companySelector'
+import Footer from '../auth/Footer'
 
 function Assessment(props){
     const companyName = (props.company)?.name
@@ -125,6 +126,7 @@ function Assessment(props){
                </Form>
                
             </Container>
+            <Footer />
         </div>
     )
     

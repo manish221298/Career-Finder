@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 //import { findResume } from  '../../selectors/resumeSelector'
 import ResumeForm from './ResumeForm'
+import Footer from '../auth/Footer'
 import { startAddResume } from '../../actions/resumeAction'
 
 function CreateResume(props) {
@@ -13,6 +14,7 @@ function CreateResume(props) {
     return (
         <div>
             <ResumeForm handleEditSubmit={handleEditSubmit} />
+            <Footer />
         </div>
     )
 }

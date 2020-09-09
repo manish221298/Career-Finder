@@ -35,5 +35,8 @@ router.post('/api/internship',  internshipController.create)
 router.get('/api/internship',  internshipController.list)
 router.put('/api/internship/:id',authenticateUser, internshipController.update)
 
+//Twilio
+router.post('/api/twilio', assessmentController.send)
+
 
 module.exports = router

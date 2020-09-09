@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Footer from './Footer'
 
 import { startRegisterUser } from '../../actions/userAction'
 
@@ -72,6 +73,7 @@ class Register extends React.Component{
                         <input type="submit" value="Register" className="btn btn-secondary" />
                     </Form>
                 </Container>
+                <Footer />
             </div>
         )
     }

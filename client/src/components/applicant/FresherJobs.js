@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import moment from 'moment';
 import { Container, Card, Button, Nav, Row, Col, FormControl, InputGroup} from 'react-bootstrap'
 import { FaRupeeSign, FaMapMarkerAlt } from "react-icons/fa"
+import Footer from '../auth/Footer'
 
 function FresherJob(props){
    
@@ -133,9 +134,8 @@ function FresherJob(props){
                         </div>
                     )
                 }
-                
-                
             </Container>
+            <Footer />
         </div>
     )
 }

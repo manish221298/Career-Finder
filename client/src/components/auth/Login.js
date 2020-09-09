@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { startLoginUser } from '../../actions/userAction'
 import { Container, Form } from 'react-bootstrap'
+import Footer from './Footer'
 
 class Login extends React.Component{
 
@@ -57,6 +58,7 @@ class Login extends React.Component{
                     <input type="submit" value="Login" className="btn btn-secondary" />
                 </Form>
             </Container>
+            <Footer />
             </div>
         )
     }

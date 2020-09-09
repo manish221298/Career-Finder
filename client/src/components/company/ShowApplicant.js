@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
+import axios from '../../config/axios'
 import { Container, Card, Row, Col, InputGroup, FormControl, Button } from 'react-bootstrap'
 
 
@@ -14,6 +15,16 @@ function ShowApplicant(props){
         const data = e.target.value
         const company = displayAssessment.filter(cmp => cmp.companyName.toUpperCase().includes((data).toUpperCase()))
         setValue({...setValue, name: company})
+    }
+
+    const handleSend = (applicant) => {
+        let recipent = applicant.mobileNumber
+        let textmessage = `Congratulation ${applicant.name} Your Resume has been shortlisted`
+
+        axios.post(`/api/twilio?recipent=${recipent}&textmessage=${textmessage}`)
+        .catch((applicant) => {
+            console.error(applicant)
+        })
     }
 
     return (
@@ -60,6 +71,11 @@ function ShowApplicant(props){
                                         <b>Links of latest web development projects.</b>
                                         <p>{cmp.assessment2}</p>
                                     </Row>
+                                    <Row>
+                                        <Col><Button onClick= { () => {
+                                            handleSend(cmp)
+                                        }}>SEND</Button></Col>
+                                    </Row>
                                 </Card.Body>
                             )
                         })
@@ -89,6 +105,11 @@ function ShowApplicant(props){
                                     <Row>
                                         <b>Links of latest web development projects.</b>
                                         <p>{cmp.assessment2}</p>
+                                    </Row>
+                                    <Row>
+                                        <Col><Button onClick= { () => {
+                                            handleSend(cmp)
+                                        }}>SEND</Button></Col>
                                     </Row>
                                 </Card.Body>
                             )

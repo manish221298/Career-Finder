@@ -13,6 +13,7 @@ import verified from './verified.svg'
 import manish from './manish.jpg'
 import manish1 from './manish1.jpg'
 import girl from './girl.svg'
+import Footer from '../auth/Footer'
 
 function Home(){
     return(
@@ -90,7 +91,7 @@ function Home(){
                 </Row>
             </Container>
 
-            <Container className="mt-5 mb-5">
+            <Container className="mt-5 mb-3">
                 <h2 className="text-center mb-5"><b>Hear from past interns</b></h2>
                 <CardDeck className="text-center">
                     <Card className="card" >
@@ -136,6 +137,7 @@ function Home(){
                     </Card>
                 </CardDeck>
             </Container>
+            <Footer />
         </div>
     )
 }

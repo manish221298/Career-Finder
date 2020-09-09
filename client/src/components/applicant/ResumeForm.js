@@ -2,6 +2,7 @@ import React, {useState}  from 'react'
 import { connect } from 'react-redux'
 import {Container, Form, Col, Row, Button} from 'react-bootstrap'
 import { startAddResume } from '../../actions/resumeAction'
+import Footer from '../auth/Footer'
 
 function ResumeForm(props) {
     //console.log(props)
@@ -376,6 +377,7 @@ function ResumeForm(props) {
                     </Row>
                 </Form>
             </Container>
+            <Footer />
         </div>
     )
     

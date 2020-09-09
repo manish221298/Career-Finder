@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { findResume } from  '../../selectors/resumeSelector'
 import ResumeForm from './ResumeForm'
+import Footer from '../auth/Footer'
 import { startEditResume } from '../../actions/resumeAction'
 
 function EditResume(props) {
@@ -20,6 +21,7 @@ function EditResume(props) {
                     </div>
                 )
             }
+            <Footer />
         </div>
     )
 }

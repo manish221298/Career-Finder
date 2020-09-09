@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import { Container, Card, Row, Col, Nav} from 'react-bootstrap'
+import Footer from '../auth/Footer'
 
 function ShowResume(props) {
     return (
@@ -60,6 +61,7 @@ function ShowResume(props) {
                     }
                 </Card>
             </Container>
+            <Footer />
         </div>
     )
 }
