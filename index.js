@@ -5,12 +5,20 @@ const path = require('path')
 const configureDB = require('./config/database')
 configureDB()
 const routes = require('./config/routes')
-const port = 3055
+
+//const port = 3055
+const port=process.env.PORT || 3055
 
 app.use(cors())
 
 app.use(express.json())
 app.use('/', routes)
+
+// for Heroku
+app.use(express.static(path.join(__dirname,"client/build")))
+app.get("*",(req,res) => {
+    res.sendFile(path.join(__dirname + "/client/build/index.html"))
+})
 
 
 
