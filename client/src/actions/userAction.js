@@ -26,8 +26,12 @@ export const startRegisterUser = (FormData, redirect) => {
         axios.post('/users/register', FormData)
         .then((response) => {
             //console.log(response.data)
-            if(response.data.hasOwnProperty('error')){
-                alert(response.data.error)
+            if(response.data.hasOwnProperty('errors')){
+                swal({
+                    icon:'info',
+                    title:'Invalid Email Format',
+                    // text: `${response.data.error}`,
+                  });
             }
             else{
                 swal({

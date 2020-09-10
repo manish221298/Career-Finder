@@ -9,7 +9,7 @@ function Footer() {
           <div className="row">
             <div className="col-md-6 mt-md-0 mt-3">
               <h3 className = 'text-warning' style ={{fontFamily: "Times New Roman",fontSize:'40px'}}>Career-Finder</h3>
-              <p >This website is a Project developed using JavaScript,React JS ,NodeJS ,Express JS & MongoDB.
+              <p >This website is a Project developed using JavaScript,React JS, Redux ,NodeJS ,Express JS & MongoDB.
                   <br/> This website have different sections, where User or Applicant create an account and apply for Job and Internship according to their stream.
               </p> 
             </div> 
@@ -26,12 +26,9 @@ function Footer() {
                   <li>
                     <i  style={{fontSize:'18px'}}> iammnsh01@gmail.com</i>
                   </li>
-                  {/* <li>
-                    <i className='fas fa-address-book' style={{fontSize:'18px'}}> +91 8095320791</i>
-                  </li> */}
                   <li>
                     <span className = 'fa fa-git-square'  style={{fontSize:'20px'}}>  </span> 
-                    <a href="https://github.com/manish221298" target="_blank"  className = 'text-primary bg-dark'
+                    <a href="https://github.com/manish221298"   className = 'text-primary bg-dark'
                         style={{fontSize:'20px',fontFamily: "Times New Roman"}}>Manish Kumar</a>
                   </li>
                 </ul> 

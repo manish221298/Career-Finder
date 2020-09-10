@@ -6,7 +6,7 @@ internshipController.create = (req, res) => {
     const body = req.body
     const internship = new Internship(body)
 
-    //internship.user = req.user._id
+    internship.user = req.user._id
 
     internship.save()
     .then((internship) => {
@@ -25,6 +25,17 @@ internshipController.list = (req, res) => {
     })
     .catch((internship) => {
         res.json(internship)
+    })
+}
+
+// Show Resume
+internshipController.show = (req, res) => {
+    Internship.find({user: req.user._id})   
+    .then((internship) => {
+        res.json(internship)
+    })
+    .catch((err) => {
+        res.json(err)
     })
 }
 

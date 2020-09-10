@@ -31,8 +31,9 @@ router.post('/api/assessment', authenticateUser, assessmentController.create)
 router.get('/api/assessment', authenticateUser, assessmentController.list)
 
 //  api for internship profile (create, show, update and delete)
-router.post('/api/internship',  internshipController.create)
-router.get('/api/internship',  internshipController.list)
+router.post('/api/internship', authenticateUser,  internshipController.create)
+router.get('/api/internship', authenticateUser,  internshipController.list)
+router.get('/api/internship/:id', authenticateUser,  internshipController.show)
 router.put('/api/internship/:id',authenticateUser, internshipController.update)
 
 //Twilio

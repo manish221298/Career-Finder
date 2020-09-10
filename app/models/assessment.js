@@ -28,15 +28,10 @@ const assessmentSchema = new Schema({
         required: true
     },
     user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
+        type:Schema.Types.ObjectId,
+        ref:'User',
+        required:true
     }
-    //comapny: {
-	//type: Schema.Types.ObjectId,
-	//ref: 'Company',
-	//required: true
-	//}
 })
 
 const Assessment = mongoose.model('Assessment', assessmentSchema)

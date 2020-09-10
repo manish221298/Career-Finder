@@ -6,6 +6,8 @@ companyController.create = (req, res) => {
     const body = req.body
     const company = new Company(body)
 
+    company.user = req.user._id
+
     company.save()
     .then((company) => {
         res.json(company)
@@ -30,7 +32,7 @@ companyController.list = (req, res) => {
 companyController.show = (req, res) => {
     const id = req.params.id
     
-    Company.findById(id)
+    Company.findOne({user: req.user._id, _id: id})
     .then((company) => {
         res.json(company)
     })
@@ -45,7 +47,7 @@ companyController.update = (req, res) => {
     console.log("ids", id)
     const body = req.body
 
-    Company.findByIdAndUpdate({ user: req.user._id, _id: id }, body , {new: true, runValidators: true})
+    Company.findOneAndUpdate({  _id: id }, body , {new: true, runValidators: true})
     .then((company) => {
         res.json(company)
     })
