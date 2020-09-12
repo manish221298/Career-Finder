@@ -2,7 +2,7 @@ import React, {useState}  from 'react'
 import { connect } from 'react-redux'
 import {Container, Form, Col, Row, Button} from 'react-bootstrap'
 import { startAddResume } from '../../actions/resumeAction'
-import Footer from '../auth/Footer'
+//import Footer from '../auth/Footer'
 
 function ResumeForm(props) {
     //console.log(props)
@@ -105,7 +105,7 @@ function ResumeForm(props) {
     return (
         <div>
             <Container>
-                <h1 className="text-center mt-3 text-secondary">Create Resume</h1>
+                {/* <h1 className="text-center mt-3 text-secondary">Create Resume</h1> */}
                 <Form onSubmit={handleSubmit}>
 
                     {/* //1st Row */}
@@ -377,7 +377,7 @@ function ResumeForm(props) {
                     </Row>
                 </Form>
             </Container>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
     

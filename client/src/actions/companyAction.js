@@ -1,4 +1,5 @@
 import axios from '../config/axios'
+import swal from "sweetalert"
 
 
 // Add Company
@@ -58,7 +59,7 @@ export const editCompany = (company) => {
 
 export const startEditCompany = (company) => {
     return (dispatch) => {
-        axios.put(`/api/company/${company._id}`, company, {
+        axios.put(`/api/company/${company.id}`, company, {
             headers: {
                 'Authorization': localStorage.getItem('authToken')
             }
@@ -69,12 +70,12 @@ export const startEditCompany = (company) => {
                 alert(response.data.message)
             }
             else{
-                // swal({
-                //     title:'Updated successfully',
-                //     icon: 'success'
-                // })
-                console.log("update", response.data)
-                alert('updated successfully')
+                swal({
+                    title:'Updated successfully',   
+                    icon: 'success'
+                })
+                // console.log("update", response.data)
+                // alert('updated successfully')
                 const company = response.data 
                 dispatch(editCompany(company))
             }
