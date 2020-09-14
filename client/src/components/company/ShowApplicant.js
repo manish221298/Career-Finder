@@ -13,7 +13,16 @@ function ShowApplicant(props){
 
     const filter = (e) => {
         const data = e.target.value
-        const company = displayAssessment.filter(cmp => cmp.companyName.toUpperCase().includes((data).toUpperCase()))
+        //console.log("value", data)
+        const company = displayAssessment.filter(cmp => cmp.companyName)
+        //console.log("filterCompany", company)
+        setValue({...setValue, name: company})
+    }
+    const filters = (e) => {
+        const data = e.target.value
+        //console.log("value", data)
+        const company = displayAssessment.filter(cmp => cmp.internshipName)
+        //console.log("filterCompany", company)
         setValue({...setValue, name: company})
     }
 
@@ -32,12 +41,24 @@ function ShowApplicant(props){
             <Container>
                 <h2 className="text-center mt-5 ml-5 mr-5" style={{backgroundColor: "#f2f2f2"}}><b>APPLICANT</b></h2>
                 <Row>
-                    <Col md={11} className="ml-5 mt-5">
+                    <Col md={5} className="ml-5 mt-5">
                     <InputGroup size="lg" className="mb-3">
                         <FormControl
                         type="search"
-                        placeholder="Search By Company Name"
+                        placeholder="SearchByCompanyName(FresherJob)"
                         onChange= {filter}
+                        />
+                        <InputGroup.Append>
+                        <Button variant="outline-dark">Button</Button>
+                        </InputGroup.Append>
+                    </InputGroup>
+                    </Col>
+                    <Col md={5} className="ml-5 mt-5">
+                    <InputGroup size="lg" className="mb-3">
+                        <FormControl
+                        type="search"
+                        placeholder="Search By Company Name(Intern)"
+                        onChange= {filters}
                         />
                         <InputGroup.Append>
                         <Button variant="outline-dark">Button</Button>
@@ -60,6 +81,7 @@ function ShowApplicant(props){
                                         </Col>
                                         <Col md={6}>
                                             <p className="text-right" style={{fontSize: "35px", color: "#404040"}}>{cmp.companyName}</p>
+                                            <p className="text-right" style={{fontSize: "35px", color: "#404040"}}>{cmp.internshipName}</p>
                                         </Col>
                                     </Row>
                                     <hr className="bg-dark"/>
@@ -95,6 +117,7 @@ function ShowApplicant(props){
                                         </Col>
                                         <Col md={6}>
                                             <p className="text-right" style={{fontSize: "35px", color: "#404040"}}>{cmp.companyName}</p>
+                                            <p className="text-right" style={{fontSize: "35px", color: "#404040"}}>{cmp.internshipName}</p>
                                         </Col>
                                     </Row>
                                     <hr className="bg-dark"/>

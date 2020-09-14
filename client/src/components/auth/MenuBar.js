@@ -141,8 +141,14 @@ class MenuBar extends React.Component{
                                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                         <Navbar.Collapse id="basic-navbar-nav">
                                         <Nav className="ml-auto">
+                                        <Nav.Item>
+                                            <Nav.Link href={"/resume"}>Resume</Nav.Link>
+                                        </Nav.Item>
+                                        <Nav.Item>
+                                            <Nav.Link href={"/showapplicant"}>Applicant</Nav.Link>
+                                        </Nav.Item>
                                         <Dropdown>
-                                            <Dropdown.Toggle className="text-secondary mr-5" variant="light" id="dropdown-basic">
+                                            <Dropdown.Toggle className="text-secondary mr-5 pr-5" variant="light" id="dropdown-basic">
                                                 Company
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu className="mr-5">
@@ -150,16 +156,15 @@ class MenuBar extends React.Component{
                                                 <Dropdown.Item href="/createinternship">Create-Internship</Dropdown.Item>
                                                 <Dropdown.Item href="/fresherjob">FresherJob</Dropdown.Item>
                                                 <Dropdown.Item href="/internship">Internship</Dropdown.Item>
-                                                <Dropdown.Item href="/showapplicant">Applicant</Dropdown.Item>
                                                 <Dropdown.Item href="#" onClick={this.handleLogout}>Logout</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
-                                        <Nav.Item>
+                                        {/* <Nav.Item>
                                             <Nav.Link href={"/resume"}>Resume</Nav.Link>
-                                        </Nav.Item>
-                                        <Nav.Item>
+                                        </Nav.Item> */}
+                                        {/* <Nav.Item>
                                         <Nav.Link to="#" onClick={this.handleLogout} >Logout</Nav.Link>
-                                        </Nav.Item>
+                                        </Nav.Item> */}
                                         </Nav>
                                         </Navbar.Collapse>
                                         </Navbar>
@@ -188,7 +193,6 @@ class MenuBar extends React.Component{
                                                 <Dropdown.Item href="#3">My Application</Dropdown.Item>
                                                 <Dropdown.Item href="/resumeform">Create Resume</Dropdown.Item>
                                                 <Dropdown.Item href="/showresume">Show Resume</Dropdown.Item>
-                                                <Dropdown.Item href="#2">Edit Resume</Dropdown.Item>
                                                 <Dropdown.Item href="#" onClick={this.handleLogout}>Logout</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>

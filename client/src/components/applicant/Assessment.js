@@ -69,23 +69,25 @@ function Assessment(props){
                        <Col md={8}>
                         <input className="ml-5 border-0 text-left text-secondary" style={{fontSize: "35px", outline: "none"}}
                                 value={name}
-                            />
-                        <Form.Control className="ml-5 border-0 text-left"
+                            /><br/>
+                        <input className="ml-5 mt-4 border-0 text-left text-secondary" style={{outline: "none"}}
                                 value={email}
-                            />
-                        <Form.Control className="ml-5 border-0 text-left"
-                                value={mobileNumber}
+                            /><br/>
+                        <input className="ml-5 mt-2 border-0 text-left text-secondary" style={{outline: "none"}}
+                                value={mobileNumber} 
                             />
                        </Col>
                        <Col md={4}>
+                           { companyName ?  
                             <input className="ml-5 border-0 text-center text-secondary" style={{fontSize: "35px", outline: "none"}}
                                 value={companyName}
                                 
-                            />
+                            /> :
                             <input className="ml-5 border-0 text-center text-secondary" style={{fontSize: "35px", outline: "none"}}
                                 value= {internshipName}
                                 
                             />
+                           }
                        </Col>
                    </Row>
                    <hr/>
@@ -110,7 +112,7 @@ function Assessment(props){
                    <p className="ml-5 text-secondary">If you want to share any documents or files, please share it on <Link to="mail.google.com">iammnsh01@gmail.com</Link> and paste the public link in the answer.</p>
                    <Row>
                        <Col md={11}>
-                            <Form.Control className="ml-5" as="textarea" rows="8"
+                            <Form.Control className="ml-5 text-center" as="textarea" rows="8"
                                 placeholder="Enter text..."
                                 type="text"
                                 id="assessment2"
