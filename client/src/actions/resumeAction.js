@@ -1,4 +1,5 @@
 import axios from '../config/axios'
+import swal from "sweetalert"
 
 export const AddResume = (resume) => {
     return {type: 'ADD_RESUME', payload:resume }
@@ -17,6 +18,12 @@ export const startAddResume = (formData) => {
             if(response.data.hasOwnProperty('errors')){
                //console.log(response.data.message)
                alert(response.data.message)
+            }
+            else{
+                swal({
+                    icon: "success",
+                    title: "Created Successfully"
+                })
             }
         })
     }
@@ -47,7 +54,7 @@ export const editResume = (resume) => {
 
 export const startEditResume = (resume) => {
     return (dispatch) => {
-        axios.put('/resume/create/:id', resume, {
+        axios.put(`/resume/create/${resume.id}`, resume, {
             headers: {
                 'Authorization': localStorage.getItem('authToken')
             }

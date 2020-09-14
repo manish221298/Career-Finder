@@ -13,7 +13,10 @@ const assessmentSchema = new Schema({
     },
     companyName: {
 	type: String,
-	required: true
+	//required: true
+    },
+    internshipName: {
+        type: String,
     },
     name: {
         type: String,

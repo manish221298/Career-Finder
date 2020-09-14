@@ -1,3 +1,3 @@
-export const findInternship = (internship, id) => {
-    return internship.find(intern => intern._id === id)
+export const findInternship = (internship, ids) => {
+    return internship.find(intern => intern._id === ids)
 }

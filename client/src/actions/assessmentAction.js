@@ -1,4 +1,5 @@
 import axios from '../config/axios'
+import swal from 'sweetalert'
 
 export const addAssessment = (assessment) => {
     return {type: "ADD_ASSESSMENT", payload: assessment}
@@ -12,7 +13,11 @@ export const startAddAssessment = (formData) => {
             }
         })
         .then((response) => {
-            alert('successfully added')
+            swal({  
+                icon: 'success',
+                title:'Applied Successfully', 
+                text: "If your resume has been selected, then you will receive a text or mail from our end"
+            })
             const assessment = response.data
             console.log("assessment", assessment)
             dispatch(addAssessment(assessment))

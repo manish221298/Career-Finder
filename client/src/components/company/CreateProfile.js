@@ -6,7 +6,6 @@ import { startAddCompany } from '../../actions/companyAction'
 function CreateProfile(props){  
 
         const  handleEditSubmit = (company) => {
-        
         //const redirect = () => props.history.push('/customer')
         props.dispatch(startAddCompany(company))
     }

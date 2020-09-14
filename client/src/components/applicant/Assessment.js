@@ -4,11 +4,14 @@ import {Link} from 'react-router-dom'
 import {Container, Form, Col, Row, Button} from 'react-bootstrap'
 import { startAddAssessment } from '../../actions/assessmentAction'
 import { findCompany } from '../../selectors/companySelector'
+import { findInternship } from '../../selectors/internshipSelector' //
 import Footer from '../auth/Footer'
 
 function Assessment(props){
     const companyName = (props.company)?.name
-    //console.log(companyName)
+    const internshipName = (props.internship)?.name //
+    //console.log("knfzvkx", internshipName)
+    
     const name = props.resume.map(cv => (cv.name)).toString()
     const email = props.resume.map(cv => cv.email).toString()
     const mobileNumber = props.resume.map(cv => cv.mobileNumber).toString()
@@ -18,6 +21,7 @@ function Assessment(props){
         assessment1: '',
         assessment2: '', 
         companyName: '',
+        internshipName: '', //
         name: '',
         email: '',
         mobileNumber: ''
@@ -40,6 +44,7 @@ function Assessment(props){
             assessment1: assessment1,
             assessment2: assessment2,
             companyName: companyName,
+            internshipName: internshipName, //
             name: name,
             email: email,
             mobileNumber: mobileNumber //(props.company)?.name
@@ -61,8 +66,8 @@ function Assessment(props){
 
                <Form >
                    <Row>
-                       <Col md={6}>
-                       <Form.Control className="ml-5 border-0 text-left" style={{fontSize: "35px"}}
+                       <Col md={8}>
+                        <input className="ml-5 border-0 text-left text-secondary" style={{fontSize: "35px", outline: "none"}}
                                 value={name}
                             />
                         <Form.Control className="ml-5 border-0 text-left"
@@ -72,14 +77,14 @@ function Assessment(props){
                                 value={mobileNumber}
                             />
                        </Col>
-                       <Col md={6}>
-                            <Form.Control className="ml-5 border-0 text-center" style={{fontSize: "35px"}}
-                                type="text"
-                                id="assessment1"
-                                name="companyName"
+                       <Col md={4}>
+                            <input className="ml-5 border-0 text-center text-secondary" style={{fontSize: "35px", outline: "none"}}
                                 value={companyName}
-                                onChange={handleChange}
-                                required
+                                
+                            />
+                            <input className="ml-5 border-0 text-center text-secondary" style={{fontSize: "35px", outline: "none"}}
+                                value= {internshipName}
+                                
                             />
                        </Col>
                    </Row>
@@ -134,9 +139,11 @@ function Assessment(props){
 
 const mapStateToProps = (state, props) => {
     const id = props.match.params.id
+    const ids = props.match.params.id //
     return {
         user: state.user,
         company: findCompany(state.company, id),
+        internship: findInternship(state.internship, ids), //
         //company: state.company,
         resume: state.resume
     }
