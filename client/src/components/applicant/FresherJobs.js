@@ -28,7 +28,7 @@ function FresherJob(props){
             <Container>
                 <h1 className="text-center mt-5 text-secondary">Welcome to Freshers Job</h1>
                 <Row>
-                    <Col md={11} className="ml-5 mt-5">
+                    <Col md={11} xs={9} className="ml-5 mt-5">
                     <InputGroup size="lg" className="mb-3">
                         <FormControl
                         type="search"

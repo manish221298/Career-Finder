@@ -152,7 +152,7 @@ function InternshipForm(props){
                         </Col>
                     </Row>
                     <Row>
-                        <Col md={6} style={{marginLeft: "290px"}}>
+                        <Col md={6}>
                         <Button  size="lg" block  className="mt-5 pl-5 pr-5">
                         <input type="submit" className="btn" value="SUBMIT"/></Button>
                         </Col>

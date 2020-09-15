@@ -159,12 +159,6 @@ class MenuBar extends React.Component{
                                                 <Dropdown.Item href="#" onClick={this.handleLogout}>Logout</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
-                                        {/* <Nav.Item>
-                                            <Nav.Link href={"/resume"}>Resume</Nav.Link>
-                                        </Nav.Item> */}
-                                        {/* <Nav.Item>
-                                        <Nav.Link to="#" onClick={this.handleLogout} >Logout</Nav.Link>
-                                        </Nav.Item> */}
                                         </Nav>
                                         </Navbar.Collapse>
                                         </Navbar>
