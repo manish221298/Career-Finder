@@ -23,6 +23,12 @@ const companyReducer = (state = [], action) => {
             })
         }
 
+        case "DELETE_COMPANY": {
+            return state.filter(comp => {
+                return comp._id !== action.payload._id
+            })
+        }
+
         default: {
             return [...state]
         }

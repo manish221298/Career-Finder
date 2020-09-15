@@ -10,6 +10,12 @@ const internshipReducer = (state = [], action) => {
             return [].concat(state = internshipInitialState, action.payload)
         }
 
+        case "DELETE_INTERNSHIP": {
+            return state.filter(intern => {
+                return intern._id !== action.payload._id
+            })
+        }
+
         default: {
             return [...state]
         }

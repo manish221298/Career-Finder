@@ -7,22 +7,25 @@ import { Container, Card, Row, Col, InputGroup, FormControl, Button } from 'reac
 function ShowApplicant(props){
     const displayAssessment = props.assessment
 
+    const company = displayAssessment.filter(cmp => cmp.companyName)
+    const internship = displayAssessment.filter(cmp => cmp.internshipName)
+    
+    
+
     const initialState = {name: []}
     const [eachValue, setValue] = useState(initialState)
     const {name} = eachValue
 
-    const filter = (e) => {
+    const search = (e) => {
         const data = e.target.value
-        //console.log("value", data)
-        const company = displayAssessment.filter(cmp => cmp.companyName)
-        //console.log("filterCompany", company)
-        setValue({...setValue, name: company})
+        console.log("value", data)
+        const companies = company.filter(cmp => cmp.companyName.toUpperCase().includes((data).toUpperCase()))
+        console.log("filterCompany", companies)
+        setValue({...setValue, name: companies})
     }
     const filters = (e) => {
         const data = e.target.value
-        //console.log("value", data)
-        const company = displayAssessment.filter(cmp => cmp.internshipName)
-        //console.log("filterCompany", company)
+        const company = internship.filter(cmp => cmp.internshipName.toUpperCase().includes((data).toUpperCase()))
         setValue({...setValue, name: company})
     }
 
@@ -46,7 +49,7 @@ function ShowApplicant(props){
                         <FormControl
                         type="search"
                         placeholder="SearchByCompanyName(FresherJob)"
-                        onChange= {filter}
+                        onChange= {search}
                         />
                         <InputGroup.Append>
                         <Button variant="outline-dark">Button</Button>
@@ -126,12 +129,16 @@ function ShowApplicant(props){
                                     </Row>
                                     <hr className="bg-dark"/>
                                     <Row>
+                                        <Col>
                                         <b>Why should you be hired for this role?</b>
                                         <p>{cmp.assessment1}</p>
+                                        </Col>
                                     </Row>
                                     <Row>
+                                        <Col>
                                         <b>Links of latest web development projects.</b>
                                         <p>{cmp.assessment2}</p>
+                                        </Col>
                                     </Row>
                                     <Row>
                                         <Col><Button onClick= { () => {

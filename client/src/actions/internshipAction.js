@@ -49,3 +49,24 @@ export const startSetInternship = () => {
         })
     }
 }
+
+// Delete internship
+
+export const deleteInternship = (internship) => {
+    return {type: "DELETE_INTERNSHIP", payload: internship}
+}
+
+export const startDeleteInternship = (id) => {
+    return (dispatch) => {
+        axios.delete(`/api/internship/${id}`, {
+            headers: {
+                'Authorization': localStorage.getItem('authToken')
+            }
+        })
+        .then((response) => {
+            //alert('deleted successfully')
+            const internship = response.data
+            dispatch(deleteInternship(internship))
+        })
+    }
+}

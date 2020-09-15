@@ -35,6 +35,7 @@ router.post('/api/internship', authenticateUser,  internshipController.create)
 router.get('/api/internship', authenticateUser,  internshipController.list)
 router.get('/api/internship/:id', authenticateUser,  internshipController.show)
 router.put('/api/internship/:id',authenticateUser, internshipController.update)
+router.delete('/api/internship/:id',authenticateUser, internshipController.destroy)
 
 //Twilio
 router.post('/api/twilio', assessmentController.send)

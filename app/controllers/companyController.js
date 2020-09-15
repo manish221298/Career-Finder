@@ -32,7 +32,7 @@ companyController.list = (req, res) => {
 companyController.show = (req, res) => {
     const id = req.params.id
     
-    Company.findOne({user: req.user._id, _id: id})
+    Company.findOne({ _id: id})
     .then((company) => {
         res.json(company)
     })

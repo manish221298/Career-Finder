@@ -4,6 +4,8 @@ import moment from 'moment';
 import { Container, Card, Button, Nav, Row, Col, FormControl, InputGroup} from 'react-bootstrap'
 import { FaRupeeSign, FaMapMarkerAlt } from "react-icons/fa"
 import Footer from '../auth/Footer'
+import {startDeleteInternship } from '../../actions/internshipAction'
+import swal from "sweetalert"
 
 function Internship(props) {
 
@@ -21,6 +23,24 @@ function Internship(props) {
         // console.log("skills", skills)
         
         setValue({...eachValue,  name: skills})
+    }
+
+    const handleDelete = (id) => {
+        swal({
+            title: "Are you sure ?",
+            icon: "warning",
+            text: "You will not be able to recover this profile",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("Successfully Deleted", {	
+                icon: "success",
+              });
+              props.dispatch(startDeleteInternship(id)) 
+            } 
+          })
     }
 
     return (
@@ -77,7 +97,12 @@ function Internship(props) {
                                 </Row>
                                     {
                                         props.user.role === 'admin' ? 
+                                        <div>
                                         <Nav.Link href={`/company/editprofile/${cmp._id}`}>Edit</Nav.Link>
+                                        <Button style={{fontSize: "20px", float: "right"}}
+                                            onClick = {() => handleDelete(cmp._id)}
+                                        >Delete</Button>
+                                        </div>
                                         : 
                                         <Nav.Link href={`/assessment/${cmp._id}`}><Button style={{fontSize: "20px", float: "right"}}>Apply Now</Button></Nav.Link>
                                     }
@@ -122,7 +147,12 @@ function Internship(props) {
                                 </Row>
                                     {
                                         props.user.role === 'admin' ? 
+                                        <div>
                                         <Nav.Link href={`/company/editprofile/${cmp._id}`}>Edit</Nav.Link>
+                                        <Button style={{fontSize: "20px", float: "right"}}
+                                            onClick = {() => handleDelete(cmp._id)}
+                                        >Delete</Button>
+                                        </div>
                                         : 
                                         <Nav.Link href={`/assessment/${cmp._id}`}><Button style={{fontSize: "20px", float: "right"}}>Apply Now</Button></Nav.Link>
                                     }

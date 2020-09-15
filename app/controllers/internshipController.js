@@ -52,4 +52,16 @@ internshipController.update = (req, res) => {
         })
 }
 
+// DElete internship profile
+internshipController.destroy = (req, res) => {
+    const id = req.params.id
+    Internship.findByIdAndDelete(id)
+    .then((internship) => {
+        res.json(internship)
+    })
+    .catch((err) => {
+        res.json(err)
+    })
+}
+
 module.exports = internshipController

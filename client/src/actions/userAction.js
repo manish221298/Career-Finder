@@ -29,8 +29,8 @@ export const startRegisterUser = (FormData, redirect) => {
             if(response.data.hasOwnProperty('errors')){
                 swal({
                     icon:'info',
-                    title:'Invalid Email Format',
-                    // text: `${response.data.error}`,
+                    title:'error',
+                    text: `${response.data.message}`,
                   });
             }
             else{

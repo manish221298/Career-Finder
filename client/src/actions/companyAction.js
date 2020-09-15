@@ -82,3 +82,23 @@ export const startEditCompany = (company) => {
         })
     }
 }
+
+export const deleteCompany = (company) => {
+    return {type: "DELETE_COMPANY", payload: company}
+}
+
+export const startDeleteCompany = (id) => {
+    return (dispatch) => {
+        axios.delete(`/api/company/${id}`, {
+            headers: {
+                'Authorization': localStorage.getItem('authToken')
+            }
+        })
+        .then((response) => {
+            //alert("deleted successfully")
+            const company = response.data
+            console.log("deleted", company)
+            dispatch(deleteCompany(company))
+        })
+    }
+}
