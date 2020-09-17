@@ -124,10 +124,12 @@ function Assessment(props){
                        </Col>
                    </Row>
                    <Row>
-                        <Col md={6} style={{marginLeft: "290px"}}>
-                        <Button   className="mt-3 mb-3 pl-5 pr-5">
+                        <Col md={4}></Col>
+                        <Col md={4}>
+                        <Button size="sm" block   className="mt-3 mb-3 pl-5 pr-5">
                         <input type="submit" className="btn" value="SUBMIT"/></Button>
                         </Col>
+                        <Col md={4}></Col>
                     </Row>
                     <hr/>
                </Form>
