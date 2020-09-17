@@ -6,8 +6,8 @@ const configureDB = require('./config/database')
 configureDB()
 const routes = require('./config/routes')
 
-const port = 3055  
-//const port=process.env.PORT || 3055 // for heroku
+//const port = 3055  
+const port=process.env.PORT || 3055 // for heroku
 
 app.use(cors())
 
