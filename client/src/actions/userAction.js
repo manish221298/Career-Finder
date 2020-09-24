@@ -26,7 +26,14 @@ export const startRegisterUser = (FormData, redirect) => {
         axios.post('/users/register', FormData)
         .then((response) => {
             //console.log(response.data)
-            if(response.data.hasOwnProperty('errors')){
+            if(response.data.hasOwnProperty('error')){
+                swal({
+                    icon:'info',
+                    title:'error',
+                    text: `${response.data.error}`,
+                  });
+            }
+            else if(response.data.hasOwnProperty('errors')){
                 swal({
                     icon:'info',
                     title:'error',

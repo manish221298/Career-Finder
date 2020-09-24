@@ -34,75 +34,75 @@ const resumeSchema = new Schema ({
                 required: true,
             },
 
-        seniorSecondary: {
-            college: {
-                type: String,
-                required: true
-            },
-            board: {
-                type: String,
-                required: true
-            },
-            passingYear: {
-                type: Number,
-                required: true
-            },
-            grade: {
-                type: String,
-                required: true
-            }
-        },
+    //     seniorSecondary: {
+    //         college: {
+    //             type: String,
+    //             required: true
+    //         },
+    //         board: {
+    //             type: String,
+    //             required: true
+    //         },
+    //         passingYear: {
+    //             type: Number,
+    //             required: true
+    //         },
+    //         grade: {
+    //             type: String,
+    //             required: true
+    //         }
+    //     },
 
-        graduation: {
-            institution: {
-                type: String,
-                required: true
-            },
-            university: {
-                type: String,
-                required: true
-            },
-            yearOfCompletion: {
-                type: Number,
-                required: true
-            },
-            performance: {
-                type: String,
-                required: true
-            },
-	    degree: {
-		type: String,
-		required: true
-	    },
-	   stream: {
-		type: String,
-		required: true
-	    },
-        },
+    //     graduation: {
+    //         institution: {
+    //             type: String,
+    //             required: true
+    //         },
+    //         university: {
+    //             type: String,
+    //             required: true
+    //         },
+    //         yearOfCompletion: {
+    //             type: Number,
+    //             required: true
+    //         },
+    //         performance: {
+    //             type: String,
+    //             required: true
+    //         },
+	//     degree: {
+	// 	type: String,
+	// 	required: true
+	//     },
+	//    stream: {
+	// 	type: String,
+	// 	required: true
+	//     },
+    //     },
 
-    skills: [String],
-    experience: {
-        type: String,
-        required: true
-    },
-    projects:  {
-            title: {
-                type: String,
-                required: true
-            },
-            startDate: {
-                type: Date,
-                required: true
-            },
-            endDate: {
-                type: Date,
-                required: true
-            },
-            link: {
-                type: String,
-                required: true
-            }
-        },
+    // skills: [String],
+    // experience: {
+    //     type: String,
+    //     required: true
+    // },
+    // projects:  {
+    //         title: {
+    //             type: String,
+    //             required: true
+    //         },
+    //         startDate: {
+    //             type: Date,
+    //             required: true
+    //         },
+    //         endDate: {
+    //             type: Date,
+    //             required: true
+    //         },
+    //         link: {
+    //             type: String,
+    //             required: true
+    //         }
+    //     },
     user: {
                 type: Schema.Types.ObjectId,
                 ref: 'User',

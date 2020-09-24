@@ -15,9 +15,12 @@ export const startAddResume = (formData) => {
         })
         .then((response) => {
             console.log(response.data)
-            if(response.data.hasOwnProperty('errors')){
-               //console.log(response.data.message)
-               alert(response.data.message)
+            if(response.data.hasOwnProperty('error')){
+                swal({
+                    icon:'info',
+                    title:'error',
+                    text: `${response.data.error}`,
+                  });
             }
             else{
                 swal({
